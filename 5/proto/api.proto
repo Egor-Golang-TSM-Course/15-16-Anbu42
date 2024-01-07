@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package api;
+
+option go_package = "./api";
+
+service TaskService {
+  rpc CreateTask (TaskRequest) returns (TaskResponse);
+  rpc GetTask (TaskRequest) returns (TaskResponse);
+}
+
+message TaskRequest {
+  int32 taskId = 1;
+  string taskName = 2;
+}
+
+message TaskResponse {
+  int32 taskId = 1;
+  string taskName = 2;
+}
